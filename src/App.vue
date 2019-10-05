@@ -8,6 +8,7 @@
       :value="code"
       :options="editorOption">
     </codemirror>
+    <component :is="resultComponent"></component>
   </div>
 </template>
 
@@ -37,6 +38,10 @@ export default {
   computed: {
     previewReadme () {
       return marked(this.readme)
+    },
+    resultComponent () {
+      const component = () => import('@/MyHelloWorld.vue')
+      return component
     }
   }
 }
