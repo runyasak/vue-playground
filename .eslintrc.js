@@ -22,6 +22,7 @@ module.exports = {
     'space-before-function-paren': 'off',
     'object-curly-newline': 'off',
     'no-underscore-dangle': 'off',
+    'no-useless-escape': 'off',
     'no-param-reassign': ['error', {
       props: true,
       ignorePropertyModificationsFor: [
