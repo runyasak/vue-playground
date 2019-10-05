@@ -14,6 +14,7 @@ module.exports = {
     'vue/html-closing-bracket-newline': 'off',
     'vue/html-self-closing': 'off',
     'vue/component-name-in-template-casing': 'off',
+    'vue/no-v-html': 'off',
     'comma-dangle': ['error', 'never'],
     'semi': ['error', 'never'],
     'quote-props': ['error', 'consistent-as-needed'],

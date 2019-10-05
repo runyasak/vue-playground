@@ -1,16 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">
-        Home
-      </router-link> |
-      <router-link to="/about">
-        About
-      </router-link>
-    </div>
-    <router-view />
+    <h1>Readme</h1>
+    <div v-html="previewReadme"></div>
   </div>
 </template>
+
+<script>
+import marked from 'marked'
+
+export default {
+  name: 'App',
+  data () {
+    return {
+      readme: '# My Readme'
+    }
+  },
+  computed: {
+    previewReadme () {
+      return marked(this.readme)
+    }
+  }
+}
+</script>
 
 <style>
 #app {
