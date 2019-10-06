@@ -26,7 +26,7 @@
                 <codemirror
                   ref="playground-codemirror"
                   readonly
-                  :value="code"
+                  :value="previewCode"
                   :options="editorOption">
                 </codemirror>
               </div>
@@ -73,15 +73,12 @@
 import { codemirror } from 'vue-codemirror'
 import marked from 'marked'
 
-import { code } from './code'
-
 export default {
   name: 'App',
   components: { codemirror },
   data () {
     return {
       drawer: true,
-      readme: '# My Readme',
       editorOption: {
         tabSize: 2,
         lineNumbers: true,
@@ -90,7 +87,8 @@ export default {
         theme: 'material',
         readOnly: true
       },
-      code,
+      previewCode: '',
+      previewReadme: '',
       items: [
         {
           title: 'test',
@@ -99,21 +97,38 @@ export default {
       ]
     }
   },
-  mounted () {
-    console.log(this.$router)
-  },
   computed: {
-    previewReadme () {
-      return marked(this.readme)
-    },
     resultComponent () {
-      const component = () => import('@/MyHelloWorld.vue')
+      const component = () => import(`@/views/${this.$route.name}`)
       return component
     }
+  },
+  async mounted () {
+    const [code, readme] = await Promise.all([
+      this.importPreviewCode(),
+      this.importPreviewReadme()
+    ])
+
+    this.previewCode = code
+    this.previewReadme = marked(readme)
   },
   methods: {
     toggleDrawer () {
       this.drawer = !this.drawer
+    },
+    importPreviewCode () {
+      return new Promise((resolve, reject) => {
+        import(`@/views/${this.$route.name}/code.js`)
+          .then(({ default: result }) => { resolve(result) })
+          .catch(error => reject(new Error(error.message)))
+      })
+    },
+    importPreviewReadme () {
+      return new Promise((resolve, reject) => {
+        import(`raw-loader!@/views/${this.$route.name}/README.md`)
+          .then(({ default: result }) => { resolve(result) })
+          .catch(error => reject(new Error(error.message)))
+      })
     }
   }
 }
