@@ -71,7 +71,6 @@
 
 <script>
 import { codemirror } from 'vue-codemirror'
-import marked from 'marked'
 
 export default {
   name: 'App',
@@ -110,7 +109,7 @@ export default {
     ])
 
     this.previewCode = code
-    this.previewReadme = marked(readme)
+    this.previewReadme = readme
   },
   methods: {
     toggleDrawer () {
@@ -125,7 +124,7 @@ export default {
     },
     importPreviewReadme () {
       return new Promise((resolve, reject) => {
-        import(`raw-loader!@/views/${this.$route.name}/README.md`)
+        import(`@/views/${this.$route.name}/README.md`)
           .then(({ default: result }) => { resolve(result) })
           .catch(error => reject(new Error(error.message)))
       })
