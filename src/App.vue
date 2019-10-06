@@ -1,15 +1,72 @@
 <template>
-  <div id="app">
-    <h1>Readme</h1>
-    <div v-html="previewReadme"></div>
-    <codemirror
-      style="font-size: 18px;"
-      readonly
-      :value="code"
-      :options="editorOption">
-    </codemirror>
-    <component :is="resultComponent"></component>
-  </div>
+  <v-app class="_bg-material-imp">
+    <v-app-bar
+      color="primary"
+      fixed
+      app>
+      <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
+      <v-toolbar-title>Vue Playground</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    <v-content>
+      <v-container
+        fluid
+        class="fill-height">
+        <v-row class="fill-height">
+          <v-col cols="6">
+            <div v-html="previewReadme"></div>
+          </v-col>
+          <v-col cols="6">
+            <div class="fill-height d-flex flex-column">
+              <div class="_h-50pct">
+                <div class="font-weight-bold">
+                  Code
+                </div>
+                <codemirror
+                  ref="playground-codemirror"
+                  readonly
+                  :value="code"
+                  :options="editorOption">
+                </codemirror>
+              </div>
+              <div class="_h-50pct">
+                <div class="font-weight-bold">
+                  Result
+                </div>
+                <div class="white black--text fill-height">
+                  <component :is="resultComponent"></component>
+                </div>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      color="#191D20">
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Topics
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list nav>
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+          :to="item.to">
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </v-app>
 </template>
 
 <script>
@@ -23,6 +80,7 @@ export default {
   components: { codemirror },
   data () {
     return {
+      drawer: true,
       readme: '# My Readme',
       editorOption: {
         tabSize: 2,
@@ -32,8 +90,17 @@ export default {
         theme: 'material',
         readOnly: true
       },
-      code
+      code,
+      items: [
+        {
+          title: 'test',
+          to: { name: 'home' }
+        }
+      ]
     }
+  },
+  mounted () {
+    console.log(this.$router)
   },
   computed: {
     previewReadme () {
@@ -43,11 +110,16 @@ export default {
       const component = () => import('@/MyHelloWorld.vue')
       return component
     }
+  },
+  methods: {
+    toggleDrawer () {
+      this.drawer = !this.drawer
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 @import '~codemirror/lib/codemirror.css';
 @import '~codemirror/theme/material.css';
 
@@ -55,19 +127,19 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+._bg-material-imp {
+  background-color: #263238 !important;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+._h-50pct {
+  height: 50%;
 }
+</style>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+<style>
+.CodeMirror {
+  height: auto;
 }
 </style>
