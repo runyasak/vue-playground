@@ -1,5 +1,6 @@
 {
   "name": "vue-playground",
+  "description": "Web Playground for Vue.js",
   "version": "0.1.0",
   "private": true,
   "scripts": {
