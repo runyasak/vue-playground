@@ -9,7 +9,9 @@
       <v-toolbar-title>Vue Playground</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
-    <v-content>
+    <v-content
+      :key="$route.fullPath"
+      @hook:mounted="initiateData">
       <v-container
         fluid
         class="fill-height">
@@ -108,16 +110,19 @@ export default {
       return component
     }
   },
-  async mounted () {
-    const [code, readme] = await Promise.all([
-      this.importPreviewCode(),
-      this.importPreviewReadme()
-    ])
-
-    this.previewCode = code
-    this.previewReadme = readme
+  mounted () {
+    this.initiateData()
   },
   methods: {
+    async initiateData () {
+      const [code, readme] = await Promise.all([
+        this.importPreviewCode(),
+        this.importPreviewReadme()
+      ])
+
+      this.previewCode = code
+      this.previewReadme = readme
+    },
     toggleDrawer () {
       this.drawer = !this.drawer
     },
