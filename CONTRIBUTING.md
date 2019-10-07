@@ -40,6 +40,6 @@ Then, adding route of you topic in `src/router.js`.
 
 Finally, please make a pull request and target to `master` branch.
 
-* Feature Requests
+# Feature Requests
 
 Ideas and feedbacks are welcome. Please, create an issue with some explanations of your ideas. Your issues will be merit and priceless for developers in the future.
