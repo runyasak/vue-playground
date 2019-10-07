@@ -1,5 +1,7 @@
 export default `<template>
-<h1>{{ text }}</h1>
+  <div id="app">
+    {{ text }}
+  </div>
 </template>
 
 <script>
