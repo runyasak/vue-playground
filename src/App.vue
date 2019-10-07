@@ -19,21 +19,22 @@
           </v-col>
           <v-col cols="6">
             <div class="fill-height d-flex flex-column">
+              <div class="font-weight-bold">
+                Code
+              </div>
               <div class="_h-50pct">
-                <div class="font-weight-bold">
-                  Code
-                </div>
                 <codemirror
                   ref="playground-codemirror"
+                  class="pb-4"
                   readonly
                   :value="previewCode"
                   :options="editorOption">
                 </codemirror>
               </div>
+              <div class="font-weight-bold">
+                Result
+              </div>
               <div class="_h-50pct">
-                <div class="font-weight-bold">
-                  Result
-                </div>
                 <div class="white black--text fill-height">
                   <component :is="resultComponent"></component>
                 </div>
@@ -153,7 +154,11 @@ export default {
 </style>
 
 <style>
+.vue-codemirror {
+  height: 100%;
+  padding-bottom: 16px;
+}
 .CodeMirror {
-  height: auto;
+  height: 100%;
 }
 </style>
