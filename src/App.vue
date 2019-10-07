@@ -57,7 +57,7 @@
       </v-list-item>
       <v-list nav>
         <v-list-item
-          v-for="item in items"
+          v-for="item in listItems"
           :key="item.title"
           link
           :to="item.to">
@@ -88,16 +88,21 @@ export default {
         readOnly: true
       },
       previewCode: '',
-      previewReadme: '',
-      items: [
-        {
-          title: 'test',
-          to: { name: 'home' }
-        }
-      ]
+      previewReadme: ''
     }
   },
   computed: {
+    listItems () {
+      const mapRoutes = this.$router.options.routes.map(route => ({
+        name: route.name,
+        title: route.meta.title
+      }))
+      const filterExistingRoutes = mapRoutes.filter(({ name, title }) => name && title)
+      return filterExistingRoutes.map(({ name, title }) => ({
+        title,
+        to: { name }
+      }))
+    },
     resultComponent () {
       const component = () => import(`@/views/${this.$route.name}`)
       return component
