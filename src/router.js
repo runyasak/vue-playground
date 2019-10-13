@@ -15,6 +15,11 @@ export default new Router({
       path: '*',
       redirect: { name: 'HelloWorld' },
       meta: { title: 'Hello World!' }
+    },
+    {
+      path: '/conditional-rendering',
+      name: 'ConditionalRendering',
+      meta: { title: 'Conditional Rendering' }
     }
   ]
 })
