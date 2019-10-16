@@ -12,6 +12,11 @@ export default new Router({
       meta: { title: 'Hello World!' }
     },
     {
+      path: '/raw-html',
+      name: 'RawHTML',
+      meta: { title: 'Raw HTML' }
+    },
+    {
       path: '*',
       redirect: { name: 'HelloWorld' },
       meta: { title: 'Hello World!' }
