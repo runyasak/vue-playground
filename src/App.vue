@@ -106,8 +106,8 @@ export default {
       }))
     },
     resultComponent () {
-      const component = () => import(`@/views/${this.$route.name}`)
-      return component
+      const routeName = this.$route.name
+      return () => import(`@/views/${routeName}`)
     }
   },
   mounted () {
