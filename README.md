@@ -1,4 +1,4 @@
-[EN](README.md) | [ES](README_es.md) | [TH](README_th.md)
+[EN](README.md) | [TH](README_th.md) | [ES](README_es.md) | [KO](README_ko.md)
 
 # Vue Playground
 
