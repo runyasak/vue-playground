@@ -19,7 +19,7 @@ export default new Router({
     {
       path: '/loop',
       name: 'Loop',
-      meta: { title: 'Loop v-for' }
+      meta: { title: 'List Rendering' }
     }
   ]
 })
