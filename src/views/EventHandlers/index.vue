@@ -10,11 +10,8 @@
     </button>
     <h1>Example 2</h1>
     <p>Your name is {{ userName }}</p>
-    <input
-      type="text"
-      placeholder="Write your name then press enter"
-      @keydown.enter="submitName"
-    />
+    <input type="text" placeholder="Your name" @keydown.enter="submitName" />
+    <p id="input-helper-text">Press enter to submit</p>
   </div>
 </template>
 
@@ -35,4 +32,20 @@ export default {
 </script>
 
 <style>
+p {
+  margin: 0 10px;
+}
+
+button,
+input {
+  background-color: grey;
+  border-radius: 5px;
+  margin: 0 10px;
+  padding: 5px 10px;
+  color: #000;
+}
+
+#input-helper-text {
+  font-size: 10px;
+}
 </style>
