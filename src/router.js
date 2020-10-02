@@ -25,6 +25,11 @@ export default new Router({
       path: '/conditional-rendering',
       name: 'ConditionalRendering',
       meta: { title: 'Conditional Rendering' }
+    },
+    {
+      path: '/event-handlers',
+      name: 'EventHandlers',
+      meta: { title: 'Event Handlers' }
     }
   ]
 })
