@@ -2,7 +2,7 @@
 
 # Vue Playground
 
-Vue Playground é um projeto de aplicação web como um recurso para aprendedizagem de Vue.js. Nós estamos focados em prover uma descrição com exemplos para cada tópico dos tutoriais.
+Vue Playground é um projeto de aplicação web como um recurso para aprendizagem de Vue.js. Nós estamos focados em prover uma descrição com exemplos para cada tópico dos tutoriais.
 
 Você pode ver o Playground por esse link, [https://vue-playground.netlify.com/](https://vue-playground.netlify.com/)
 
@@ -10,4 +10,4 @@ Você pode ver o Playground por esse link, [https://vue-playground.netlify.com/]
 
 # Contribuindo
 
-Este projeto esta em desenvolvimento. Se você gostaria de nos ajudar, por favor veja aqui [como começar](https://github.com/runyasak/vue-playground/blob/master/CONTRIBUTING.md). Nós esperamos PR efetivos e idéias de você. 😁
+Este projeto esta em desenvolvimento. Se você gostaria de nos ajudar, por favor veja aqui [como começar](https://github.com/runyasak/vue-playground/blob/master/CONTRIBUTING.md). Nós esperamos PR efetivos e suas idéias. 😁
