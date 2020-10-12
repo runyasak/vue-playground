@@ -1,4 +1,4 @@
-[EN](CONTRIBUTING.md) | [ES](CONTRIBUTING_es.md)
+[EN](CONTRIBUTING.md) | [ES](CONTRIBUTING_es.md) | [BM](CONTRIBUTING_bm.md)
 # Contributing
 
 After you clone the project please install dependencies.
