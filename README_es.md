@@ -10,4 +10,4 @@ Puedes ver el Playground en este link, [https://vue-playground.netlify.com/](htt
 
 # Contribución
 
-Este proyecto está bajo desarrollo. Si nos quieres ayudar, por favor dale un vistazo a esto [cómo empezar](https://github.com/runyasak/vue-playground/blob/master/CONTRIBUTING.md). Esperamos PR e ideas efectivas de ti. 😁
+Este proyecto está bajo desarrollo. Si nos quieres ayudar, por favor dale un vistazo a esto [cómo empezar](https://github.com/runyasak/vue-playground/blob/master/CONTRIBUTING_es.md). Esperamos PR e ideas efectivas de ti. 😁

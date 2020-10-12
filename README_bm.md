@@ -10,4 +10,4 @@ Anda boleh melihat Playground dari pautan ini, [https://vue-playground.netlify.c
 
 # Cara menyumbang
 
-Projek ini sedang dalam pembangunan. Sekiranya anda ingin menolong kami, sila baca [bagaimana untuk mula](https://github.com/runyasak/vue-playground/blob/master/CONTRIBUTING.md). Kami berharap PR dan idea yang berkesan daripada anda. 😁
+Projek ini sedang dalam pembangunan. Sekiranya anda ingin menolong kami, sila baca [bagaimana untuk mula](https://github.com/runyasak/vue-playground/blob/master/CONTRIBUTING_bm.md). Kami berharap PR dan idea yang berkesan daripada anda. 😁
