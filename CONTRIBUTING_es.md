@@ -1,4 +1,4 @@
-[EN](CONTRIBUTING.md) | [ES](CONTRIBUTING_es.md) | [BM](CONTRIBUTING_bm.md)
+[EN](CONTRIBUTING.md) | [ES](CONTRIBUTING_es.md) | [MS](CONTRIBUTING_ms.md)
 # Contribuciones
 
 Despues de clonar el proyecto por favor instale las dependencias con:
